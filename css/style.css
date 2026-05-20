@@ -836,16 +836,24 @@ section {
     .cover-date { font-size: 0.85rem; letter-spacing: 5px; }
     .cover-guest { font-size: 1rem; }
 
-    .section-title { font-size: 1.8rem; }
-    .section-subtitle { font-size: 0.7rem; letter-spacing: 4px; margin-bottom: 2rem; }
+    .section-title { font-size: 1.6rem; }
+    .section-subtitle { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 1.5rem; }
 
-    section { padding: 70px 16px; }
+    section { padding: 60px 16px; }
+
+    .intro-names { font-size: 1.8rem; }
+    .intro-text { font-size: 0.78rem; margin-bottom: 1.5rem; padding: 0 10px; }
+    .intro-ornament { font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .quran-box { padding: 1.5rem 1rem; }
+    .quran-text { font-size: 0.78rem; line-height: 1.8; }
+    .quran-source { font-size: 0.65rem; }
+    .section-intro { padding: 50px 16px 40px; }
 
     .couple-container { gap: 2rem; }
     .couple-ampersand { display: none; }
-    .couple-name { font-size: 1.5rem; }
-    .couple-parents { font-size: 0.8rem; }
-    .couple-photo { width: 150px; height: 150px; font-size: 2.5rem; }
+    .couple-name { font-size: 1.4rem; }
+    .couple-parents { font-size: 0.78rem; }
+    .couple-photo { width: 140px; height: 140px; font-size: 2.2rem; }
 
     .timeline-item { padding: 1.5rem; }
     .timeline-year { font-size: 1.2rem; }
@@ -859,14 +867,15 @@ section {
 
     .countdown-number { font-size: 2.2rem; }
     .savedate-countdown {
-        gap: 0.8rem;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        margin: 0 auto 3rem;
+        gap: 0.6rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 220px;
+        margin: 0 auto 2.5rem;
+        padding: 0;
     }
-    .savedate-countdown .countdown-number { font-size: 2.5rem; }
-    .savedate-countdown .countdown-item { min-width: unset; padding: 0.8rem 0.6rem; flex: 1; }
+    .savedate-countdown .countdown-number { font-size: 2.2rem; }
+    .savedate-countdown .countdown-item { min-width: unset; padding: 0.8rem 0.5rem; flex: unset; }
     .savedate-location { font-size: 0.75rem; }
 
     .gift-container { gap: 1.5rem; }
