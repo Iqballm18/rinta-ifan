@@ -3,6 +3,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const guestName = urlParams.get('to');
 if (guestName) {
     document.getElementById('guestName').textContent = guestName;
+    // Auto-fill wish name field
+    document.getElementById('wishName').value = guestName;
 }
 
 // ===== AUDIO =====
@@ -104,6 +106,8 @@ function createParticles() {
 }
 
 // ===== WISHES FORM =====
+const SHEET_API = 'https://script.google.com/macros/s/AKfycbz9HbKz-rw30zwGRwqgi7KxMEsR0_Zglxn83fzXQc8t4Q5Vnqz-zlAxUZuju7xxb59RAg/exec';
+
 // Attendance buttons
 const attendanceBtns = document.querySelectorAll('.attendance-btn');
 const attendanceInput = document.getElementById('wishAttendance');
@@ -116,46 +120,97 @@ attendanceBtns.forEach(btn => {
     });
 });
 
+// Load existing wishes from Google Sheet
+function loadWishes() {
+    fetch(SHEET_API)
+        .then(res => res.json())
+        .then(data => {
+            const wishesList = document.getElementById('wishesList');
+            wishesList.innerHTML = '';
+            // Show latest first
+            data.reverse().forEach(item => {
+                const wishItem = document.createElement('div');
+                wishItem.classList.add('wish-item');
+                let badgeHtml = '';
+                if (item.kehadiran === 'hadir') {
+                    badgeHtml = ' <span class="wish-badge hadir">Hadir</span>';
+                } else if (item.kehadiran === 'tidak') {
+                    badgeHtml = ' <span class="wish-badge tidak">Tidak Hadir</span>';
+                } else if (item.kehadiran === 'ragu') {
+                    badgeHtml = ' <span class="wish-badge ragu">Ragu</span>';
+                }
+                wishItem.innerHTML = '<p class="wish-name">' + escapeHtml(item.nama) + badgeHtml + '</p><p class="wish-message">' + escapeHtml(item.pesan) + '</p>';
+                wishesList.appendChild(wishItem);
+            });
+        })
+        .catch(() => {});
+}
+
+// Load wishes on page open
+loadWishes();
+
+// Submit wish to Google Sheet
 document.getElementById('wishForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const nameInput = document.getElementById('wishName');
     const messageInput = document.getElementById('wishMessage');
+    const submitBtn = this.querySelector('button[type="submit"]');
     const name = nameInput.value.trim();
     const message = messageInput.value.trim();
     const attendance = attendanceInput.value;
 
     if (name && message) {
-        const wishItem = document.createElement('div');
-        wishItem.classList.add('wish-item');
-        wishItem.style.opacity = '0';
-        wishItem.style.transform = 'translateX(-20px)';
+        // Disable button while sending
+        submitBtn.textContent = 'Mengirim...';
+        submitBtn.disabled = true;
 
-        let badgeHtml = '';
-        if (attendance === 'hadir') {
-            badgeHtml = ' <span class="wish-badge hadir">Hadir</span>';
-        } else if (attendance === 'tidak') {
-            badgeHtml = ' <span class="wish-badge tidak">Tidak Hadir</span>';
-        } else if (attendance === 'ragu') {
-            badgeHtml = ' <span class="wish-badge ragu">Ragu</span>';
-        }
+        fetch(SHEET_API, {
+            method: 'POST',
+            body: JSON.stringify({ nama: name, kehadiran: attendance, pesan: message }),
+            headers: { 'Content-Type': 'text/plain' }
+        })
+        .then(res => res.json())
+        .then(() => {
+            // Add to UI immediately
+            const wishItem = document.createElement('div');
+            wishItem.classList.add('wish-item');
+            wishItem.style.opacity = '0';
+            wishItem.style.transform = 'translateX(-20px)';
 
-        wishItem.innerHTML = '<p class="wish-name">' + escapeHtml(name) + badgeHtml + '</p><p class="wish-message">' + escapeHtml(message) + '</p>';
-        document.getElementById('wishesList').prepend(wishItem);
+            let badgeHtml = '';
+            if (attendance === 'hadir') {
+                badgeHtml = ' <span class="wish-badge hadir">Hadir</span>';
+            } else if (attendance === 'tidak') {
+                badgeHtml = ' <span class="wish-badge tidak">Tidak Hadir</span>';
+            } else if (attendance === 'ragu') {
+                badgeHtml = ' <span class="wish-badge ragu">Ragu</span>';
+            }
 
-        // Animate in
-        requestAnimationFrame(() => {
-            wishItem.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            wishItem.style.opacity = '1';
-            wishItem.style.transform = 'translateX(0)';
+            wishItem.innerHTML = '<p class="wish-name">' + escapeHtml(name) + badgeHtml + '</p><p class="wish-message">' + escapeHtml(message) + '</p>';
+            document.getElementById('wishesList').prepend(wishItem);
+
+            requestAnimationFrame(() => {
+                wishItem.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                wishItem.style.opacity = '1';
+                wishItem.style.transform = 'translateX(0)';
+            });
+
+            nameInput.value = '';
+            messageInput.value = '';
+            attendanceInput.value = '';
+            attendanceBtns.forEach(b => b.classList.remove('selected'));
+
+            submitBtn.textContent = '✓ Terkirim!';
+            setTimeout(() => {
+                submitBtn.textContent = 'Kirim Ucapan';
+                submitBtn.disabled = false;
+            }, 2000);
+        })
+        .catch(() => {
+            submitBtn.textContent = 'Gagal, coba lagi';
+            submitBtn.disabled = false;
+            setTimeout(() => { submitBtn.textContent = 'Kirim Ucapan'; }, 2000);
         });
-
-        nameInput.value = '';
-        messageInput.value = '';
-        attendanceInput.value = '';
-        attendanceBtns.forEach(b => b.classList.remove('selected'));
-
-        // Scroll to new wish
-        wishItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 });
 
