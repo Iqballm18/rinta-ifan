@@ -16,14 +16,25 @@
         <div class="cover-ornament cover-ornament-tr"></div>
         <div class="cover-ornament cover-ornament-bl"></div>
         <div class="cover-ornament cover-ornament-br"></div>
+        <!-- Decorative floating elements -->
+        <div class="cover-deco cover-deco-1"></div>
+        <div class="cover-deco cover-deco-2"></div>
+        <div class="cover-deco cover-deco-3"></div>
+        <!-- Center ring ornament -->
+        <div class="cover-ring"></div>
         <div class="cover-content">
+            <div class="cover-top-ornament">✦ — ❖ — ✦</div>
             <p class="cover-bismillah">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ</p>
             <p class="cover-label">Undangan Pernikahan</p>
             <h1 class="cover-names">Rinta & Ifan</h1>
+            <div class="cover-divider">
+                <span></span><span>♥</span><span></span>
+            </div>
             <p class="cover-date">03 · 06 · 2026</p>
             <p class="cover-to">Kepada Yth. Bpk/Ibu/Saudara/i</p>
             <p class="cover-guest" id="guestName">Tamu Undangan</p>
             <button class="btn-open" id="btnOpen">Buka Undangan</button>
+            <div class="cover-bottom-ornament">✦ ✦ ✦</div>
         </div>
     </div>
 
@@ -63,6 +74,16 @@
     <div class="main-content" id="mainContent">
         <!-- INTRO / WE'RE GETTING MARRIED -->
         <section class="section-light section-intro" id="sectionIntro">
+            <!-- Decorative top ornament -->
+            <div class="intro-top-decor">
+                <div class="intro-decor-line"></div>
+                <div class="intro-decor-diamond">◆</div>
+                <div class="intro-decor-line"></div>
+            </div>
+            <div class="intro-corner intro-corner-tl"></div>
+            <div class="intro-corner intro-corner-tr"></div>
+            <div class="intro-corner intro-corner-bl"></div>
+            <div class="intro-corner intro-corner-br"></div>
             <p class="section-subtitle">We're Getting Married</p>
             <div class="intro-ornament animate-on-scroll">✦ ❖ ✦</div>
             <h3 class="intro-names animate-on-scroll">Rinta & Ifan</h3>
@@ -231,12 +252,12 @@
             <div class="wishes-container">
                 <form class="wishes-form" id="wishForm">
                     <input type="text" placeholder="Nama Anda" id="wishName" required>
-                    <select id="wishAttendance">
-                        <option value="" disabled selected>Konfirmasi Kehadiran</option>
-                        <option value="hadir">✓ Akan Hadir</option>
-                        <option value="tidak">✗ Tidak Bisa Hadir</option>
-                        <option value="ragu">? Masih Ragu</option>
-                    </select>
+                    <div class="attendance-buttons" id="attendanceButtons">
+                        <button type="button" class="attendance-btn" data-value="hadir">✓ Hadir</button>
+                        <button type="button" class="attendance-btn" data-value="tidak">✗ Tidak Hadir</button>
+                        <button type="button" class="attendance-btn" data-value="ragu">? Ragu</button>
+                    </div>
+                    <input type="hidden" id="wishAttendance" value="">
                     <textarea placeholder="Tulis ucapan & doa untuk kedua mempelai..." id="wishMessage" required></textarea>
                     <button type="submit">Kirim Ucapan</button>
                 </form>

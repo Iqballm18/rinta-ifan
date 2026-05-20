@@ -104,11 +104,22 @@ function createParticles() {
 }
 
 // ===== WISHES FORM =====
+// Attendance buttons
+const attendanceBtns = document.querySelectorAll('.attendance-btn');
+const attendanceInput = document.getElementById('wishAttendance');
+
+attendanceBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        attendanceBtns.forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+        attendanceInput.value = this.getAttribute('data-value');
+    });
+});
+
 document.getElementById('wishForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const nameInput = document.getElementById('wishName');
     const messageInput = document.getElementById('wishMessage');
-    const attendanceInput = document.getElementById('wishAttendance');
     const name = nameInput.value.trim();
     const message = messageInput.value.trim();
     const attendance = attendanceInput.value;
@@ -140,7 +151,8 @@ document.getElementById('wishForm').addEventListener('submit', function (e) {
 
         nameInput.value = '';
         messageInput.value = '';
-        attendanceInput.selectedIndex = 0;
+        attendanceInput.value = '';
+        attendanceBtns.forEach(b => b.classList.remove('selected'));
 
         // Scroll to new wish
         wishItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

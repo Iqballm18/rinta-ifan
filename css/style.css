@@ -86,6 +86,107 @@ body {
     to { opacity: 0.3; transform: scale(1); }
 }
 
+/* Cover decorative floating circles */
+.cover-deco {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(212,168,83,0.1);
+    animation: coverFloat 8s ease-in-out infinite;
+}
+
+.cover-deco-1 {
+    width: 300px; height: 300px;
+    top: -80px; right: -80px;
+    animation-delay: 0s;
+}
+
+.cover-deco-2 {
+    width: 200px; height: 200px;
+    bottom: -50px; left: -50px;
+    animation-delay: 2s;
+}
+
+.cover-deco-3 {
+    width: 150px; height: 150px;
+    top: 40%; left: -40px;
+    border-color: rgba(139,26,45,0.15);
+    animation-delay: 4s;
+}
+
+@keyframes coverFloat {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.05) rotate(3deg); opacity: 0.7; }
+}
+
+/* Center ring behind names */
+.cover-ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,168,83,0.1);
+    box-shadow: 0 0 80px rgba(139,26,45,0.1) inset;
+    animation: ringPulse 4s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); border-color: rgba(212,168,83,0.1); }
+    50% { transform: translate(-50%, -50%) scale(1.03); border-color: rgba(212,168,83,0.2); }
+}
+
+/* Cover top ornament */
+.cover-top-ornament {
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 6px;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+    animation: fadeInUp 1.5s ease 0.3s both;
+}
+
+/* Cover divider with heart */
+.cover-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0.8rem 0 1.5rem;
+}
+
+.cover-divider span:first-child,
+.cover-divider span:last-child {
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.cover-divider span:last-child {
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.cover-divider span:nth-child(2) {
+    color: var(--accent-light);
+    font-size: 0.8rem;
+    animation: heartBeat 2s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+}
+
+/* Cover bottom ornament */
+.cover-bottom-ornament {
+    font-size: 0.6rem;
+    color: var(--gold);
+    letter-spacing: 8px;
+    margin-top: 2rem;
+    opacity: 0.4;
+    animation: fadeInUp 1.5s ease 1s both;
+}
+
 .cover-content {
     text-align: center;
     color: var(--white);
@@ -921,6 +1022,63 @@ section {
 .section-intro {
     text-align: center;
     padding: 100px 20px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top decorative ornament */
+.intro-top-decor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 3rem;
+}
+
+.intro-decor-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.intro-decor-line:last-child {
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.intro-decor-diamond {
+    color: var(--gold);
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+/* Corner ornaments */
+.intro-corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.2;
+}
+
+.intro-corner-tl {
+    top: 20px; left: 20px;
+    border-width: 1px 0 0 1px;
+}
+
+.intro-corner-tr {
+    top: 20px; right: 20px;
+    border-width: 1px 1px 0 0;
+}
+
+.intro-corner-bl {
+    bottom: 20px; left: 20px;
+    border-width: 0 0 1px 1px;
+}
+
+.intro-corner-br {
+    bottom: 20px; right: 20px;
+    border-width: 0 1px 1px 0;
 }
 
 .intro-ornament {
@@ -1121,6 +1279,37 @@ section {
 }
 
 /* ===== RSVP SELECT ===== */
+.attendance-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.attendance-btn {
+    flex: 1;
+    padding: 10px 6px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    color: rgba(255,255,255,0.4);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.attendance-btn:hover {
+    border-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+}
+
+.attendance-btn.selected {
+    border-color: rgba(139,26,45,0.5);
+    background: rgba(139,26,45,0.2);
+    color: var(--accent-light);
+}
+
 .wishes-form select {
     padding: 16px 20px;
     border: 1px solid rgba(139,26,45,0.2);
@@ -1194,32 +1383,7 @@ section {
     height: 0;
 }
 
-/* Floral corner accents for light sections */
-.section-intro::before {
-    content: '❀';
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 2rem;
-    color: var(--gold);
-    opacity: 0.15;
-}
-
-.section-intro::after {
-    content: '❀';
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    font-size: 2rem;
-    color: var(--gold);
-    opacity: 0.15;
-    transform: rotate(180deg);
-}
-
-.section-intro {
-    position: relative;
-    overflow: hidden;
-}
+/* Floral corner accents - handled by intro-corner */
 
 /* Decorative dots between sections */
 .section-light,
