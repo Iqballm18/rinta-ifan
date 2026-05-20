@@ -841,7 +841,7 @@ section {
 
     section { padding: 60px 16px; }
 
-    .intro-names { font-size: 1.8rem; }
+    .intro-names { font-size: 2.5rem; }
     .intro-text { font-size: 0.78rem; margin-bottom: 1.5rem; padding: 0 10px; }
     .intro-ornament { font-size: 0.9rem; margin-bottom: 0.8rem; }
     .quran-box { padding: 1.5rem 1rem; }
@@ -1139,8 +1139,8 @@ section {
 }
 
 .intro-names {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
     color: var(--text);
     margin-bottom: 1rem;
     font-weight: 400;
