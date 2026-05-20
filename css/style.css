@@ -587,7 +587,7 @@ section {
     resize: vertical;
 }
 
-.wishes-form button {
+.wishes-form button[type="submit"] {
     padding: 16px 40px;
     background: linear-gradient(135deg, var(--accent), var(--accent-light));
     color: var(--white);
@@ -602,7 +602,7 @@ section {
     border-radius: 4px;
 }
 
-.wishes-form button:hover {
+.wishes-form button[type="submit"]:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(139,26,45,0.4);
 }
@@ -836,17 +836,17 @@ section {
     .cover-date { font-size: 0.85rem; letter-spacing: 5px; }
     .cover-guest { font-size: 1rem; }
 
-    .section-title { font-size: 1.6rem; }
+    .section-title { font-size: 1.4rem; }
     .section-subtitle { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 1.5rem; }
 
     section { padding: 60px 16px; }
 
-    .intro-names { font-size: 2.2rem; margin-bottom: 0.3rem; }
-    .intro-text { font-size: 0.7rem; margin-bottom: 1rem; padding: 0; line-height: 1.6; }
+    .intro-names { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .intro-text { font-size: 0.75rem; margin-bottom: 1rem; padding: 0; line-height: 1.7; }
     .intro-ornament { font-size: 0.8rem; margin-bottom: 0.5rem; }
     .quran-box { padding: 1rem 0.8rem; }
-    .quran-text { font-size: 0.68rem; line-height: 1.6; margin-bottom: 0.6rem; }
-    .quran-source { font-size: 0.58rem; letter-spacing: 2px; }
+    .quran-text { font-size: 0.62rem; line-height: 1.7; margin-bottom: 0.5rem; }
+    .quran-source { font-size: 0.55rem; letter-spacing: 2px; }
     .section-intro { padding: 30px 16px 25px; }
     .section-intro .ornament { margin: 0.8rem auto; }
     .section-intro .section-subtitle { margin-bottom: 1rem; }
@@ -889,9 +889,9 @@ section {
     .wishes-form input,
     .wishes-form textarea,
     .wishes-form select { font-size: 0.85rem; padding: 14px 16px; }
-    .wishes-form button { padding: 14px 30px; font-size: 0.75rem; }
+    .wishes-form button[type="submit"] { padding: 14px 30px; font-size: 0.75rem; }
 
-    .footer-names { font-size: 2.5rem; }
+    .footer-names { font-size: 2.2rem; }
     .footer-quote { font-size: 0.95rem; }
     .footer-label { font-size: 0.65rem; }
 
@@ -903,7 +903,7 @@ section {
 .savedate-btn:focus,
 .event-maps-btn:focus,
 .gift-copy-btn:focus,
-.wishes-form button:focus,
+.wishes-form button[type="submit"]:focus,
 .music-btn:focus {
     outline: 2px solid var(--gold);
     outline-offset: 3px;
@@ -1155,34 +1155,35 @@ section {
     max-width: 700px;
     margin: 0 auto;
     padding: 3rem 3.5rem;
-    border: 1px solid var(--gold);
-    background: rgba(253, 248, 248, 0.8);
-    border-radius: 4px;
+    border: 1px solid rgba(139,26,45,0.2);
+    background: rgba(253, 248, 248, 0.6);
+    border-radius: 8px;
     position: relative;
 }
 
 .quran-box::before {
-    content: '"';
+    content: '✦';
     position: absolute;
-    top: 10px;
-    left: 20px;
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    color: var(--gold);
-    opacity: 0.3;
-    line-height: 1;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--accent);
+    background: var(--bg);
+    padding: 0 12px;
 }
 
 .quran-box::after {
-    content: '"';
+    content: '— ❖ —';
     position: absolute;
-    bottom: 0;
-    right: 20px;
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    color: var(--gold);
-    opacity: 0.3;
-    line-height: 1;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: var(--accent);
+    background: var(--bg);
+    padding: 0 12px;
+    letter-spacing: 4px;
 }
 
 .quran-text {
@@ -1330,7 +1331,7 @@ section {
 
 .attendance-btn {
     flex: 1;
-    padding: 6px 4px;
+    padding: 8px 4px;
     border: 1px solid rgba(255,255,255,0.12);
     background: transparent;
     color: rgba(255,255,255,0.35);
@@ -1428,7 +1429,7 @@ section {
 
 /* ===== MOBILE BUTTON FULL WIDTH ===== */
 @media (max-width: 768px) {
-    .wishes-form button {
+    .wishes-form button[type="submit"] {
         align-self: stretch;
         text-align: center;
     }
@@ -1867,7 +1868,7 @@ section {
 }
 
 /* ===== BUTTON DISABLED STATE ===== */
-.wishes-form button:disabled {
+.wishes-form button[type="submit"]:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
@@ -1885,14 +1886,10 @@ section {
 /* ===== QURAN BOX MOBILE PSEUDO FIX ===== */
 @media (max-width: 768px) {
     .quran-box::before {
-        font-size: 2.5rem;
-        top: 5px;
-        left: 10px;
+        font-size: 0.7rem;
     }
     .quran-box::after {
-        font-size: 2.5rem;
-        bottom: -5px;
-        right: 10px;
+        font-size: 0.6rem;
     }
 }
 
