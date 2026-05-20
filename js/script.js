@@ -236,6 +236,8 @@ document.getElementById('musicBtn').addEventListener('click', function () {
 
 // ===== SMOOTH SCROLL FOR INTERNAL LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Skip Google Calendar button
+    if (anchor.id === 'googleCalendarBtn') return;
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
@@ -296,18 +298,20 @@ function generateGoogleCalendarUrl() {
     const startDate = '20260603T030000Z'; // 3 Jun 2026 10:00 WIB = 03:00 UTC
     const endDate = '20260603T090000Z';   // 3 Jun 2026 16:00 WIB = 09:00 UTC
     const location = encodeURIComponent('Mojosongo, Balongbesuk, Diwek, Jombang');
-    const details = encodeURIComponent('Akad Nikah: 10:00 - 12:00 WIB di Masjid Mustawa\nResepsi: 12:00 - Selesai di Gedung BLK\n\nMojosongo, Balongbesuk, Diwek, Jombang');
+    const details = encodeURIComponent('Akad Nikah: 10:00 - 12:00 WIB di Masjid Mustawa / Rumah Mempelai Wanita\nResepsi: 12:00 - Selesai di Gedung BLK\n\nAlamat: Mojosongo, Balongbesuk, Diwek, Jombang\nGoogle Maps: https://maps.app.goo.gl/Pfm3kxA3H6mKLiaA7');
 
     return 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
         '&text=' + title +
         '&dates=' + startDate + '/' + endDate +
         '&location=' + location +
-        '&details=' + details;
+        '&details=' + details +
+        '&sf=true&output=xml';
 }
 
 const calendarBtn = document.getElementById('googleCalendarBtn');
 if (calendarBtn) {
     calendarBtn.href = generateGoogleCalendarUrl();
+    calendarBtn.setAttribute('rel', 'noopener noreferrer');
 }
 
 // ===== NAVIGATION BAR =====
