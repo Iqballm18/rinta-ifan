@@ -831,14 +831,33 @@ section {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .cover-names { font-size: 3rem; }
+    .cover-bismillah { font-size: 1.2rem; }
+    .cover-label { font-size: 0.65rem; letter-spacing: 5px; }
+    .cover-date { font-size: 0.85rem; letter-spacing: 5px; }
+    .cover-guest { font-size: 1rem; }
+
+    .section-title { font-size: 1.8rem; }
+    .section-subtitle { font-size: 0.7rem; letter-spacing: 4px; margin-bottom: 2rem; }
+
+    section { padding: 70px 16px; }
+
     .couple-container { gap: 2rem; }
     .couple-ampersand { display: none; }
-    .countdown-number { font-size: 2.2rem; }
-    .event-card { min-width: 100%; }
+    .couple-name { font-size: 1.5rem; }
+    .couple-parents { font-size: 0.8rem; }
+    .couple-photo { width: 150px; height: 150px; font-size: 2.5rem; }
+
     .timeline-item { padding: 1.5rem; }
+    .timeline-year { font-size: 1.2rem; }
+    .timeline-title { font-size: 0.9rem; }
+    .timeline-desc { font-size: 0.82rem; }
     .love-story-timeline { padding-left: 30px; }
-    .gift-container { gap: 1.5rem; }
-    .gift-card { min-width: 100%; }
+
+    .event-card { min-width: 100%; padding: 2rem 1.5rem; }
+    .event-name { font-size: 1.3rem; }
+    .event-detail { font-size: 0.82rem; }
+
+    .countdown-number { font-size: 2.2rem; }
     .savedate-countdown {
         gap: 0.8rem;
         display: flex;
@@ -846,9 +865,31 @@ section {
         justify-content: center;
         margin: 0 auto 3rem;
     }
-    .savedate-countdown .countdown-number { font-size: 2.8rem; }
-    .savedate-countdown .countdown-item { min-width: unset; padding: 1rem 0.8rem; flex: 1; }
+    .savedate-countdown .countdown-number { font-size: 2.5rem; }
+    .savedate-countdown .countdown-item { min-width: unset; padding: 0.8rem 0.6rem; flex: 1; }
+    .savedate-location { font-size: 0.75rem; }
+
+    .gift-container { gap: 1.5rem; }
+    .gift-card { min-width: 100%; padding: 2rem 1.5rem; }
+    .gift-title { font-size: 1.1rem; }
+    .gift-number { font-size: 1.2rem; }
+
+    .wishes-form input,
+    .wishes-form textarea,
+    .wishes-form select { font-size: 0.85rem; padding: 14px 16px; }
+    .wishes-form button { padding: 14px 30px; font-size: 0.75rem; }
+
     .footer-names { font-size: 2.5rem; }
+    .footer-quote { font-size: 0.95rem; }
+    .footer-label { font-size: 0.65rem; }
+
+    .intro-names { font-size: 2.5rem; }
+    .intro-text { font-size: 0.88rem; }
+    .quran-box { padding: 2rem 1.5rem; }
+    .quran-text { font-size: 0.88rem; line-height: 2; }
+    .quran-source { font-size: 0.75rem; }
+
+    .ornament { width: 100px; }
 }
 
 /* ===== FOCUS STATES (Accessibility) ===== */
@@ -1156,9 +1197,7 @@ section {
 }
 
 @media (max-width: 768px) {
-    .intro-names { font-size: 2.5rem; }
-    .quran-box { padding: 2rem 1.5rem; }
-    .quran-text { font-size: 0.95rem; }
+    .intro-corner { width: 50px; height: 50px; }
 }
 
 /* ===== SAVE THE DATE SECTION ===== */
