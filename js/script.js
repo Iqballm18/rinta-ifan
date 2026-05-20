@@ -122,11 +122,17 @@ attendanceBtns.forEach(btn => {
 
 // Load existing wishes from Google Sheet
 function loadWishes() {
+    const wishesList = document.getElementById('wishesList');
+    wishesList.innerHTML = '<div class="wishes-loading">Memuat ucapan...</div>';
+
     fetch(SHEET_API)
         .then(res => res.json())
         .then(data => {
-            const wishesList = document.getElementById('wishesList');
             wishesList.innerHTML = '';
+            if (data.length === 0) {
+                wishesList.innerHTML = '<div class="wishes-loading">Belum ada ucapan. Jadilah yang pertama!</div>';
+                return;
+            }
             // Show latest first
             data.reverse().forEach(item => {
                 const wishItem = document.createElement('div');
@@ -143,7 +149,9 @@ function loadWishes() {
                 wishesList.appendChild(wishItem);
             });
         })
-        .catch(() => {});
+        .catch(() => {
+            wishesList.innerHTML = '<div class="wishes-loading">Gagal memuat ucapan</div>';
+        });
 }
 
 // Load wishes on page open

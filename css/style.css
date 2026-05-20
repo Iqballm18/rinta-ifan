@@ -841,13 +841,16 @@ section {
 
     section { padding: 60px 16px; }
 
-    .intro-names { font-size: 2.5rem; }
-    .intro-text { font-size: 0.78rem; margin-bottom: 1.5rem; padding: 0 10px; }
-    .intro-ornament { font-size: 0.9rem; margin-bottom: 0.8rem; }
-    .quran-box { padding: 1.2rem 1rem; }
-    .quran-text { font-size: 0.42rem; line-height: 1; }
-    .quran-source { font-size: 0.6rem; }
-    .section-intro { padding: 50px 16px 40px; }
+    .intro-names { font-size: 2.2rem; margin-bottom: 0.3rem; }
+    .intro-text { font-size: 0.7rem; margin-bottom: 1rem; padding: 0; line-height: 1.6; }
+    .intro-ornament { font-size: 0.8rem; margin-bottom: 0.5rem; }
+    .quran-box { padding: 1rem 0.8rem; }
+    .quran-text { font-size: 0.68rem; line-height: 1.6; margin-bottom: 0.6rem; }
+    .quran-source { font-size: 0.58rem; letter-spacing: 2px; }
+    .section-intro { padding: 30px 16px 25px; }
+    .section-intro .ornament { margin: 0.8rem auto; }
+    .section-intro .section-subtitle { margin-bottom: 1rem; }
+    .section-intro .intro-top-decor { margin-bottom: 1rem; }
 
     .couple-container { gap: 2rem; }
     .couple-ampersand { display: none; }
@@ -891,12 +894,6 @@ section {
     .footer-names { font-size: 2.5rem; }
     .footer-quote { font-size: 0.95rem; }
     .footer-label { font-size: 0.65rem; }
-
-    .intro-names { font-size: 2.5rem; }
-    .intro-text { font-size: 0.88rem; }
-    .quran-box { padding: 2rem 1.5rem; }
-    .quran-text { font-size: 0.88rem; line-height: 2; }
-    .quran-source { font-size: 0.75rem; }
 
     .ornament { width: 100px; }
 }
@@ -1205,9 +1202,6 @@ section {
     font-weight: 500;
 }
 
-@media (max-width: 768px) {
-    .intro-corner { width: 50px; height: 50px; }
-}
 
 /* ===== SAVE THE DATE SECTION ===== */
 .section-savedate {
@@ -1870,4 +1864,34 @@ section {
     40% { transform: rotate(8deg); }
     60% { transform: rotate(-5deg); }
     80% { transform: rotate(5deg); }
+}
+
+/* ===== BUTTON DISABLED STATE ===== */
+.wishes-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===== WISHES LOADING ===== */
+.wishes-loading {
+    text-align: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.8rem;
+    padding: 2rem 0;
+}
+
+/* ===== QURAN BOX MOBILE PSEUDO FIX ===== */
+@media (max-width: 768px) {
+    .quran-box::before {
+        font-size: 2.5rem;
+        top: 5px;
+        left: 10px;
+    }
+    .quran-box::after {
+        font-size: 2.5rem;
+        bottom: -5px;
+        right: 10px;
+    }
 }
