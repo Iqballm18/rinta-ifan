@@ -844,9 +844,9 @@ section {
     .intro-names { font-size: 2.5rem; }
     .intro-text { font-size: 0.78rem; margin-bottom: 1.5rem; padding: 0 10px; }
     .intro-ornament { font-size: 0.9rem; margin-bottom: 0.8rem; }
-    .quran-box { padding: 1.5rem 1rem; }
-    .quran-text { font-size: 0.78rem; line-height: 1.8; }
-    .quran-source { font-size: 0.65rem; }
+    .quran-box { padding: 1.2rem 1rem; }
+    .quran-text { font-size: 0.42rem; line-height: 1; }
+    .quran-source { font-size: 0.6rem; }
     .section-intro { padding: 50px 16px 40px; }
 
     .couple-container { gap: 2rem; }
