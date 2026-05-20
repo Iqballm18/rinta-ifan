@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Rinta & Ifan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- COVER -->
+    <div class="cover" id="cover">
+        <div class="cover-ornament cover-ornament-tl"></div>
+        <div class="cover-ornament cover-ornament-tr"></div>
+        <div class="cover-ornament cover-ornament-bl"></div>
+        <div class="cover-ornament cover-ornament-br"></div>
+        <div class="cover-content">
+            <p class="cover-bismillah">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ</p>
+            <p class="cover-label">Undangan Pernikahan</p>
+            <h1 class="cover-names">Rinta & Ifan</h1>
+            <p class="cover-date">03 · 06 · 2026</p>
+            <p class="cover-to">Kepada Yth. Bpk/Ibu/Saudara/i</p>
+            <p class="cover-guest" id="guestName">Tamu Undangan</p>
+            <button class="btn-open" id="btnOpen">Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- PARTICLES -->
+    <div class="particles" id="particles"></div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <button class="nav-arrow" id="navArrow" title="Hide Menu">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        <a href="#sectionCouple" class="nav-item" data-section="sectionCouple" title="Mempelai">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span>Mempelai</span>
+        </a>
+        <a href="#sectionEvent" class="nav-item" data-section="sectionEvent" title="Acara">
+            <svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span>Acara</span>
+        </a>
+        <a href="#sectionGift" class="nav-item" data-section="sectionGift" title="Hadiah">
+            <svg viewBox="0 0 24 24"><path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+            <span>Hadiah</span>
+        </a>
+        <a href="#sectionLoveStory" class="nav-item" data-section="sectionLoveStory" title="Love Story">
+            <svg viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            <span>Love Story</span>
+        </a>
+        <a href="#sectionWishes" class="nav-item" data-section="sectionWishes" title="Ucapan">
+            <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            <span>Ucapan</span>
+        </a>
+    </nav>
+    <!-- MOBILE NAV COLLAPSED BUTTON -->
+    <button class="nav-collapsed-btn" id="navCollapsedBtn" title="Menu">☰</button>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content" id="mainContent">
+        <!-- INTRO / WE'RE GETTING MARRIED -->
+        <section class="section-light section-intro" id="sectionIntro">
+            <p class="section-subtitle">We're Getting Married</p>
+            <div class="intro-ornament animate-on-scroll">✦ ❖ ✦</div>
+            <h3 class="intro-names animate-on-scroll">Rinta & Ifan</h3>
+            <div class="ornament" style="margin-bottom: 2.5rem;"></div>
+            <p class="intro-text animate-on-scroll">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i ke acara pernikahan kami:</p>
+
+            <div class="quran-box animate-on-scroll">
+                <p class="quran-text">Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.</p>
+                <p class="quran-source">— QS. Ar-Rum: 21 —</p>
+            </div>
+        </section>
+
+        <!-- SAVE THE DATE -->
+        <section class="section-maroon section-savedate" id="sectionSaveDate">
+            <p class="section-subtitle">Save The Date</p>
+            <h3 class="section-title">Rabu, 03 Juni 2026</h3>
+            <p class="savedate-location">Diwek | Jombang</p>
+            <div class="ornament" style="margin-bottom: 3rem;"></div>
+            <div class="savedate-countdown animate-on-scroll">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Hari</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Jam</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Menit</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Detik</span>
+                </div>
+            </div>
+            <a href="#" id="googleCalendarBtn" class="savedate-btn animate-on-scroll" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Simpan ke Google Calendar
+            </a>
+        </section>
+
+        <!-- COUPLE -->
+        <section class="section-light" id="sectionCouple">
+            <p class="section-subtitle">Bride & Groom</p>
+            <h3 class="section-title" style="color: var(--text);">Mempelai</h3>
+            <div class="ornament" style="margin-bottom: 4rem;"></div>
+            <div class="couple-container">
+                <div class="couple-card animate-on-scroll">
+                    <div class="couple-photo">R</div>
+                    <div class="couple-ornament">✦</div>
+                    <h4 class="couple-name">Rinta Nuriya, S.M</h4>
+                    <p class="couple-parents">Putri dari<br>Bapak Abdurrahman (Alm) <br>& Ibu Ma'rifah</p>
+                    <a href="https://instagram.com/rintanuriyaaa" target="_blank" class="couple-ig">
+                        <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>@rintanuriyaaa</span>
+                    </a>
+                </div>
+                <span class="couple-ampersand animate-on-scroll">&</span>
+                <div class="couple-card animate-on-scroll">
+                    <div class="couple-photo">I</div>
+                    <div class="couple-ornament">✦</div>
+                    <h4 class="couple-name">Urifan Adi Pradana, S.T</h4>
+                    <p class="couple-parents">Putra dari<br>Bapak Sifi Suharsono <br>& Ibu Asifah</p>
+                    <a href="https://instagram.com/urifanadipradana" target="_blank" class="couple-ig">
+                        <svg class="ig-icon" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>@urifanadipradana</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOVE STORY -->
+        <section class="section-light" style="background: var(--bg-alt);" id="sectionLoveStory">
+            <p class="section-subtitle">Our Journey</p>
+            <h3 class="section-title" style="color: var(--text);">Love Story</h3>
+            <div class="ornament" style="margin-bottom: 4rem;"></div>
+            <div class="love-story-container">
+                <div class="love-story-timeline">
+                    <div class="timeline-item animate-on-scroll delay-1">
+                        <p class="timeline-year">2018</p>
+                        <p class="timeline-title">Pertama Kali Bertemu</p>
+                        <p class="timeline-desc">Kenal saat menginjak bangku SMP kelas 9. Pertemuan yang sederhana namun menjadi awal dari kisah yang indah.</p>
+                    </div>
+                    <div class="timeline-item animate-on-scroll delay-2">
+                        <p class="timeline-year">2021</p>
+                        <p class="timeline-title">Bertemu Kembali</p>
+                        <p class="timeline-desc">Di awal libur masuk perkuliahan, takdir mempertemukan kembali. Dari sekedar sapaan menjadi kedekatan yang tak terduga.</p>
+                    </div>
+                    <div class="timeline-item animate-on-scroll delay-3">
+                        <p class="timeline-year">2021 - 2026</p>
+                        <p class="timeline-title">5 Tahun LDR</p>
+                        <p class="timeline-desc">Menjalani Long Distance Relationship selama 5 tahun. Jarak bukan halangan, justru memperkuat cinta dan kepercayaan satu sama lain.</p>
+                    </div>
+                    <div class="timeline-item animate-on-scroll delay-4">
+                        <p class="timeline-year">2026</p>
+                        <p class="timeline-title">Menuju Pelaminan</p>
+                        <p class="timeline-desc">Akhirnya, perjalanan panjang ini berbuah manis. Kami siap melangkah ke jenjang pernikahan dan membangun keluarga bersama.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT -->
+        <section class="section-maroon" id="sectionEvent">
+            <p class="section-subtitle">Akad & Resepsi</p>
+            <h3 class="section-title">Waktu & Tempat</h3>
+            <div class="ornament" style="margin-bottom: 4rem;"></div>
+            <div class="event-container">
+                <div class="event-card animate-on-scroll">
+                    <div class="event-icon">💍</div>
+                    <h4 class="event-name">Akad Nikah</h4>
+                    <p class="event-detail">
+                        <strong>Rabu, 3 Juni 2026</strong><br>
+                        Pukul 10:00 - 12:00 WIB<br><br>
+                        Masjid Mustawa / Rumah Mempelai Wanita<br>
+                        Mojosongo, Balongbesuk, Diwek, Jombang
+                    </p>
+                    <a href="https://maps.app.goo.gl/Pfm3kxA3H6mKLiaA7" target="_blank" class="event-maps-btn">📍 Lihat Lokasi</a>
+                </div>
+                <div class="event-card animate-on-scroll">
+                    <div class="event-icon">🎉</div>
+                    <h4 class="event-name">Resepsi</h4>
+                    <p class="event-detail">
+                        <strong>Rabu, 3 Juni 2026</strong><br>
+                        Pukul 12:00 - Selesai<br><br>
+                        Gedung BLK<br>
+                        Mojosongo, Balongbesuk, Diwek, Jombang
+                    </p>
+                    <a href="https://maps.app.goo.gl/Pfm3kxA3H6mKLiaA7" target="_blank" class="event-maps-btn">📍 Lihat Lokasi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GIFT / HADIAH -->
+        <section class="section-light" id="sectionGift">
+            <p class="section-subtitle">Wedding Gift</p>
+            <h3 class="section-title" style="color: var(--text);">Tanda Kasih</h3>
+            <p class="gift-desc">Do'a restu keluarga dan sahabat adalah hadiah terbesar bagi kami. Namun jika memberi adalah tanda kasih, kami dengan tulus menerimanya.</p>
+            <div class="ornament" style="margin-bottom: 4rem;"></div>
+            <div class="gift-container">
+                <div class="gift-card animate-on-scroll">
+                    <div class="gift-icon">🏦</div>
+                    <h4 class="gift-title">Transfer Bank</h4>
+                    <p class="gift-bank">BCA</p>
+                    <p class="gift-number" id="rekeningNumber">1132460161</p>
+                    <p class="gift-name">a.n Rinta Nuriya</p>
+                    <button class="gift-copy-btn" onclick="copyText('1132460161')">Salin No. Rekening</button>
+                </div>
+                <div class="gift-card animate-on-scroll">
+                    <div class="gift-icon">🎁</div>
+                    <h4 class="gift-title">Kirim Hadiah</h4>
+                    <p class="gift-address">Mojosongo, Balongbesuk, Diwek, Jombang</p>
+                    <p class="gift-note">(Gang Masjid Mustawa)</p>
+                    <p class="gift-name">a.n Rinta Nuriya</p>
+                    <button class="gift-copy-btn" onclick="copyAddress()">Salin Alamat</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WISHES -->
+        <section class="section-dark" id="sectionWishes">
+            <p class="section-subtitle">Doa & Ucapan</p>
+            <h3 class="section-title">Pesan Untuk Mempelai</h3>
+            <div class="ornament" style="margin-bottom: 4rem;"></div>
+            <div class="wishes-container">
+                <form class="wishes-form" id="wishForm">
+                    <input type="text" placeholder="Nama Anda" id="wishName" required>
+                    <select id="wishAttendance">
+                        <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                        <option value="hadir">✓ Akan Hadir</option>
+                        <option value="tidak">✗ Tidak Bisa Hadir</option>
+                        <option value="ragu">? Masih Ragu</option>
+                    </select>
+                    <textarea placeholder="Tulis ucapan & doa untuk kedua mempelai..." id="wishMessage" required></textarea>
+                    <button type="submit">Kirim Ucapan</button>
+                </form>
+                <div class="wishes-list" id="wishesList">
+                    <div class="wish-item">
+                        <p class="wish-name">Keluarga Besar <span class="wish-badge hadir">Hadir</span></p>
+                        <p class="wish-message">Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fi khair. Aamiin.</p>
+                    </div>
+                    <div class="wish-item">
+                        <p class="wish-name">Sahabat <span class="wish-badge hadir">Hadir</span></p>
+                        <p class="wish-message">Selamat menempuh hidup baru! Semoga selalu diberi kebahagiaan dan keberkahan dalam rumah tangga.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="ornament"></div>
+            <p class="footer-label">Salam Bahagia Dari</p>
+            <p class="footer-names">Rinta & Ifan</p>
+            <p class="footer-date">03 · 06 · 2026</p>
+            <div class="footer-ornament-dots">✦ ✦ ✦</div>
+            <p class="footer-quote">Atas doa & ucapan Bapak/Ibu/Saudara/i,<br>kami mengucapkan terima kasih.</p>
+            <p class="footer-credit">Made with ❤️ © 2026</p>
+        </div>
+    </div>
+
+    <!-- MUSIC BUTTON -->
+    <button class="music-btn" id="musicBtn" title="Play/Pause Music" style="display:none;">
+        <svg class="music-icon-on" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        <svg class="music-icon-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
